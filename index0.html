@@ -24,7 +24,7 @@
 				<ul class="gnb">
 					<li><a href="index.html">홈</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
 					<li><a href="recipes.html">레시피</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
-					<li><a href="mangaestore.html">만개스토어</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
+					<li><a href="mansstore.html">만개스토어</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
 					<li><a href="request.html">문의사항</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
 				</ul>
 			</nav>
@@ -32,22 +32,9 @@
 		</header>
 
 		<div class="slideshow">
-			<div class="mySlides_fade">
-				<iframe width="699" height="393" src="https://www.youtube.com/embed/NvoCWyO0Vfg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-					this browser doens't support iframe
-
-				</iframe>
-			</div>
-			<div class="mySlides_fade">
-				<iframe width="699" height="393" src="https://www.youtube.com/embed/AlK2Gl6kHZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-					this browser doens't support iframe
-				</iframe>
-			</div>
-			<div class="mySlides_fade">
-				<iframe width="699" height="393" src="https://www.youtube.com/embed/aXJgN_JjYDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-					this browser doens't support iframe
-				</iframe>
-			 </div>
+			<div class="mySlides fade"> <img src="img/ban01.jpg"> </div>
+			<div class="mySlides fade">	<img src="img/ban02.jpg"> </div>
+			<div class="mySlides fade"> <img src="img/ban03.jpg"> </div>
 
 			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 			<a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -59,35 +46,20 @@
 			</div>
 		</div>
 
-		<div class="mangaestore">
-			<h2>만스 스토어</h2>
-			<ul>
-				<li>gi</li>
-				<li>aa</li>
-				<li>3</li>
-				<li>4</li>
-			</ul>
-		</div>
-		<footer class="footer">
-			<h3>copyrights &copy by Kim Jin Won</h3>
-		</footer>
+
   </div id="wrap">
+
 	<script type="text/javascript">
-		var index =1;
+
+		var index =0;
 		var time;
-		var x;
-		function plusSlides(n){
-			console.log(n);
-			slideShow(n);
-		}
-		function currentSlide(n){
-			console.log(n);
-			slideShow(n);
+		window.onload = function () {
+
 		}
 
-		function slideShow(n){
+		function slideShow(){
 			var i;
-			x= document.getElementsByClassName("mySlides_fade");
+			var x= document.getElementsByClassName("mySlides fade");
 			var dots= document.getElementsByClassName("dot");
 			for(i =0; i<x.length; i++){
 				x[i].style.display="none";
@@ -96,27 +68,12 @@
 				dots[i].className = dots[i].className.replace("active", "");
 			}
 
-		//	stopVideo(index);
-
-			index+=n;
-			if(index >x.length){
-			console.log(">x");
-				index=1;
-			} else if(index <=0){
-			console.log("<=0");
-				index=x.length;
-			}
-			console.log("index: "+index);
-
+			index++;
+			if(index >x.length){ index=1; }
 			x[index-1].style.display = "block";
 			dots[index-1].className +=" active";
-			//time=setInterval(slideShow,1500); //변수 지정 후 timeout(변수명)
-		}
 
-		/*function stopVideo(n) {
-		    var iframe = x.getElementsByClassName("ifrmae").contentWindow;
-		    iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
-		}*/
+			}
 	</script>
 </body>
 </html>
